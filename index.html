@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Daily Journal</title>
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Brady's Journal</h1>
+        </header>
+        <form action="">
+            <section class= "contentMain">
+                <fieldset>
+                    <label for="journalDate">Date of entry</label>
+                    <input type="date" name="journalDate" id="journalDate">
+                </fieldset>
+                <fieldset>
+                    <label for="conceptCovered">Concepts Covered</label>
+                    <input type="text" name="conceptCovered" id="conceptCovered">
+                </fieldset>
+                <fieldset>
+                    <label for="journalEntry">Journal Entry</label>
+                    <textarea rows="3" cols="35" name="journalEntry" form="usrform"></textarea>
+                </fieldset>
+                <fieldset>
+                    <label for="selectMood">Todays Mood</label>
+                    <select name="selectMood" id="selectMood">
+                        <option value="sad">Sad</option>
+                        <option value="ok">Ok</option>
+                        <option value="happy">Happy</option>
+                    </select>
+                </fieldset>
+            </section>
+
+            <section class="button"><input type="button" value="Submit Journal"></section>
+            
+            
+            
+        </form>
+
+        <script type="module" src="./scripts/main.js"></script>
+    </body>
+</html>

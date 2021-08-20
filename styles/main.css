@@ -10,6 +10,7 @@ textarea {
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
+	background-image: "images/solid-brown-background.jpg";
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -18,7 +19,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 html {
-	background-color: gray
+	background-color: gray;
+	/* background-image: url(/images/solid-brown-background.jpg); */
 }
 
 header{

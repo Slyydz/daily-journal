@@ -1,1 +1,3 @@
-console.log("Welcome to the main module")
+import { EntryListComponent } from "./journalList.js";
+
+EntryListComponent();

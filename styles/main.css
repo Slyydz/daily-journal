@@ -38,3 +38,7 @@ option{
 	flex-flow: column wrap;
 }
 
+.conceptCovered{
+	padding-right: 100px;
+}
+

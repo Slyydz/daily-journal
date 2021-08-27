@@ -23,11 +23,17 @@ html {
 	/* background-image: url(/images/solid-brown-background.jpg); */
 }
 
+body{
+	display:flex;
+	justify-content: center;
+}
+
 header{
 	background-color: black;
 	color: white;
 	display: flex;
 	justify-content: center;
+	max-width: 600px;
 }
 
 option{
@@ -38,6 +44,12 @@ option{
 	display: flex;
 	justify-content: center;
 	flex-flow: column wrap;
+	max-width:600px;
+}
+
+.button{
+	display:flex;
+	justify-content: center;
 }
 
 .conceptCovered{

@@ -8,6 +8,28 @@
             "dateJoined": "9/1/2021"
         }
     ],
-    "journal": [],
-    "mood": []
+    "journal": [
+        {
+            "id": 1,
+            "userID": 1,
+            "concepts": "HTML & CSS",
+            "date": "08/15/2021",
+            "journalEntry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
+            "moodID": 2
+        }
+    ],
+    "mood": [
+        {
+            "id": 1,
+            "moodName": "Sad"
+        },
+        {
+            "id": 2,
+            "moodName": "Happy"
+        },
+        {
+            "id": 3,
+            "moodName": "Meh"
+        }
+    ]
 }

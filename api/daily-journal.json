@@ -1,0 +1,13 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "userName": "Brady Williams",
+            "userEmail": "williams.cole29@yahoo.com",
+            "userPassword": "admin",
+            "dateJoined": "9/1/2021"
+        }
+    ],
+    "journal": [],
+    "mood": []
+}

@@ -5,7 +5,7 @@
             "userName": "Brady Williams",
             "userEmail": "williams.cole29@yahoo.com",
             "userPassword": "admin",
-            "dateJoined": "9/1/2021"
+            "dateJoined": 1630698867586
         }
     ],
     "journal": [
@@ -13,9 +13,25 @@
             "id": 1,
             "userID": 1,
             "concepts": "HTML & CSS",
-            "date": "08/15/2021",
+            "date": 1630698867586,
             "journalEntry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-            "moodID": 2
+            "moodID": 3
+        },
+        {
+            "id": 2,
+            "userId": 1,
+            "date": 1630698867586,
+            "concepts": "Project Completion",
+            "journalEntry": "Today we finished our group html and css projects and presented them to the class.",
+            "moodId": 2
+        },
+        {
+            "id": 3,
+            "userId": 1,
+            "date": 1630698867586,
+            "concepts": "Intro to Javascript",
+            "journalEntry": "Today was the first day of the class being introduced to JavaScript and how to implement it into the website.",
+            "moodId": 1
         }
     ],
     "mood": [

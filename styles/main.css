@@ -20,7 +20,6 @@ h1,h2,h3,h4,h5,h6 {
 
 html {
 	background-color: gray;
-	/* background-image: url(/images/solid-brown-background.jpg); */
 }
 
 body{
@@ -56,3 +55,6 @@ option{
 	padding-right: 100px;
 }
 
+.journalEntry{ 
+	border-bottom: black;
+}

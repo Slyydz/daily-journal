@@ -58,3 +58,7 @@ option{
 .journalEntry{ 
 	border-bottom: black;
 }
+
+.entryLog {
+	padding-bottom: 50px;
+}

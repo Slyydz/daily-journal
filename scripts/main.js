@@ -26,23 +26,11 @@ applicationElement.addEventListener("click", event => {
 		}
 
         //Create Post call to add post to json
-		createPost(postObject).then(window.location.reload());
-	}
-})
-
-//Event Listener for update button
-applicationElement.addEventListener("click", event => {
-    if(event.target.id === "updateButton"){
-        window.location.reload();
-    }
-})
-
-//Event Listener for clear button
-applicationElement.addEventListener("click", event => {
-    if(event.target.id === "clearButton"){
+        createPost(postObject).then(Response => showPostList());
         document.querySelector("input[name='conceptCover']").value = "";
 		document.querySelector("textarea[name='journalEntry']").value = "";
-    }
+        
+	}
 })
 
 //Event Listener for filter button

@@ -25,6 +25,7 @@ html {
 body{
 	display:flex;
 	justify-content: center;
+	max-width: 1250;
 }
 
 header{
@@ -32,7 +33,7 @@ header{
 	color: white;
 	display: flex;
 	justify-content: center;
-	max-width: 600px;
+	max-width: 620px;
 }
 
 option{
@@ -43,7 +44,9 @@ option{
 	display: flex;
 	justify-content: center;
 	flex-flow: column wrap;
-	max-width: 620px;
+	width: 650px;
+	margin: 0;
+	padding: 0;
 }
 
 .buttons{
@@ -52,8 +55,54 @@ option{
 	flex-direction: column;
 	margin-right: 250px;
 	margin-left: 250px;
-	
 }
+
+
+  .submitButton{
+	font-size: medium;
+	font-weight: bold;
+	border-radius: 8px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .submitButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  .updateButton{
+	font-size: medium;
+	font-weight: bold;
+	border-radius: 8px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .updateButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  .clearButton{
+	font-size: medium;
+	font-weight: bold;
+	border-radius: 8px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .clearButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  .filterButton{
+	border-radius: 8px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .filterButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
 
 .conceptCovered{
 	padding-right: 100px;
@@ -64,5 +113,5 @@ option{
 }
 
 form{
-	max-width: 620px;
+	max-width: 650px;
 }

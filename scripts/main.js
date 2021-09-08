@@ -1,11 +1,13 @@
 import { PostList } from "./PostList.js";
 import { getPosts } from "./DataManager.js"
 import { createPost } from "./DataManager.js"
+import { usePostCollection } from "./DataManager.js";
 
 
-
+//initial querySelector for page
 const applicationElement = document.querySelector(".daily-journal");
 
+//Event Listener for submit button
 applicationElement.addEventListener("click", event => {
 	
 	if (event.target.id === "submitButton") {
@@ -23,18 +25,19 @@ applicationElement.addEventListener("click", event => {
             moodId: mood
 		}
 
-		// be sure to import from the DataManager
+        //Create Post call to add post to json
 		createPost(postObject).then(window.location.reload());
 	}
 })
 
+//Event Listener for update button
 applicationElement.addEventListener("click", event => {
     if(event.target.id === "updateButton"){
         window.location.reload();
     }
 })
 
-
+//Event Listener for clear button
 applicationElement.addEventListener("click", event => {
     if(event.target.id === "clearButton"){
         document.querySelector("input[name='conceptCover']").value = "";
@@ -42,7 +45,29 @@ applicationElement.addEventListener("click", event => {
     }
 })
 
+//Event Listener for filter button
+applicationElement.addEventListener("click", event => {
+    if(event.target.id === "filterButton"){
+        const mood = document.querySelector("select[name='filterMood']").value;
+        showFilteredPosts(mood);
 
+    }
+})
+console.log(usePostCollection());
+
+const showFilteredPosts = (mood) => {
+    const isMood = mood;
+    //filter the data
+    const filteredData = usePostCollection().filter(singlePost => {
+      if(singlePost.moodId === isMood){
+          return singlePost;
+      }
+    })
+    const postElement = document.querySelector(".entryLog");
+    postElement.innerHTML = PostList(filteredData);
+  }
+
+//Showing Post list  
 const showPostList = () => {
         //Get a reference to the location on the DOM where the list will display
         const postElement = document.querySelector(".entryLog");
@@ -51,4 +76,5 @@ const showPostList = () => {
         })
     }
 
+//call
 showPostList();

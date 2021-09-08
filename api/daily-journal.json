@@ -15,7 +15,7 @@
       "concepts": "HTML & CSS",
       "date": 1630698867586,
       "journalEntry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-      "moodID": 3
+      "moodId": "Sad"
     },
     {
       "id": 2,
@@ -23,7 +23,7 @@
       "date": 1630698867586,
       "concepts": "Project Completion",
       "journalEntry": "Today we finished our group html and css projects and presented them to the class.",
-      "moodId": 2
+      "moodId": "Ok"
     },
     {
       "id": 3,
@@ -31,29 +31,15 @@
       "date": 1630698867586,
       "concepts": "Intro to Javascript",
       "journalEntry": "Today was the first day of the class being introduced to JavaScript and how to implement it into the website.",
-      "moodId": 1
+      "moodId": "Sad"
     },
     {
       "userId": 1,
-      "concepts": "This is a test",
-      "date": 1630703784515,
-      "journalEntry": "Dummy Data",
-      "moodID": 3,
+      "concepts": "adwdawdwa",
+      "date": 1631117196485,
+      "journalEntry": "adwawdawwwd",
+      "moodId": "Sad",
       "id": 4
-    }
-  ],
-  "mood": [
-    {
-      "id": 1,
-      "moodName": "Sad"
-    },
-    {
-      "id": 2,
-      "moodName": "Happy"
-    },
-    {
-      "id": 3,
-      "moodName": "Meh"
     }
   ]
 }

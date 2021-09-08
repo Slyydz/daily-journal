@@ -1,6 +1,7 @@
 # daily-journal
 
 daily-journal is a web app that allows the user to post a journal entry using a collection of input boxes and will display previous entries(along with the new entries)on the page.
+The user is also able to filter the displayed entries by the mood associated with them.
 
 ## Usage
 

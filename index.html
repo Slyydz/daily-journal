@@ -12,13 +12,9 @@
         </header>
         <form action="">
             <section class= "contentMain">
-                <fieldset class="journal-field">
-                    <label for="journalDate">Date of entry</label>
-                    <input type="date" name="journalDate" id="journalDate">
-                </fieldset>
                 <fieldset class="concept-field">
                     <label for="conceptCovered">Concepts</label>
-                    <input type="text" name="conceptCovered" id="conceptCovered">
+                    <input type="text" name="conceptCover" id="conceptCovered">
                 </fieldset>
                 <fieldset class="entry-field">
                     <label for="journalEntry">Journal Entry</label>
@@ -27,14 +23,19 @@
                 <fieldset class="mood-field">
                     <label for="selectMood">Todays Mood</label>
                     <select name="selectMood" id="selectMood">
-                        <option value="sad">Sad</option>
-                        <option value="ok">Ok</option>
-                        <option value="happy">Happy</option>
+                        <option value="Sad">Sad</option>
+                        <option value="Ok">Ok</option>
+                        <option value="Happy">Happy</option>
                     </select>
                 </fieldset>
+                <section class="buttons">
+                    <input type="button" id="submitButton" value="Submit Journal">
+                    <input type="button" id="updateButton" value="Update">
+                    <input type="button" id="clearButton" value="Clear">
+                </section>
             </section>
 
-            <section class="button"><input type="button" id="submitButton" value="Submit Journal"></section>
+            
             
             <section class="entryLog">
 

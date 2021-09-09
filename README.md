@@ -5,6 +5,8 @@ The user is also able to filter the displayed entries by the mood associated wit
 
 ## Usage
 
+For the application to function the user will need to go into the git terminal and type "serve" in the repository to run a local server for the page. THen the user will need to open another terminal window and jump into the api/ folder of the repository and use "json-server -p 8088 -w daily-journal.json".
+
 ![daily-journal](https://user-images.githubusercontent.com/49957836/132581852-8655827b-5e37-464f-8b17-094e70c7e721.png)
 
 

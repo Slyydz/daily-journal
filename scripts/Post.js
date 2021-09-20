@@ -9,6 +9,8 @@ export const Post = (entry) => {
     <p>${formattedDate}</p>
     <p>Mood: ${entry.moodId} </p>
     <h4>User Id: ${entry.userId}</h4>
+    <button class="editButton" id="editButton--${entry.id}">Edit</button>
+    <button class="deleteButton" id="deleteButton--${entry.id}">Delete</button>
     
 </section>
     `

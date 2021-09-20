@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import url(buttons.css);
 
 /*Typography
 --------------------------------------------------------------*/
@@ -10,7 +11,6 @@ textarea {
 	font-family: "Comfortaa", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
-	background-image: "images/solid-brown-background.jpg";
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -19,7 +19,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 html {
-	background-color: gray;
+	background-color: rgb(160,160,160);
 }
 
 body{
@@ -49,61 +49,6 @@ option{
 	padding: 0;
 }
 
-.buttons{
-	display:flex;
-	justify-content: center;
-	flex-direction: column;
-	margin-right: 250px;
-	margin-left: 250px;
-}
-
-
-  .submitButton{
-	font-size: medium;
-	font-weight: bold;
-	border-radius: 8px;
-	font-family: "Comfortaa", Arial, sans-serif;
-  }
-
-  .submitButton:hover {
-	background-color: black; /* Green */
-	color: white;
-  }
-
-  .updateButton{
-	font-size: medium;
-	font-weight: bold;
-	border-radius: 8px;
-	font-family: "Comfortaa", Arial, sans-serif;
-  }
-
-  .updateButton:hover {
-	background-color: black; /* Green */
-	color: white;
-  }
-
-  .clearButton{
-	font-size: medium;
-	font-weight: bold;
-	border-radius: 8px;
-	font-family: "Comfortaa", Arial, sans-serif;
-  }
-
-  .clearButton:hover {
-	background-color: black; /* Green */
-	color: white;
-  }
-
-  .filterButton{
-	border-radius: 8px;
-	font-family: "Comfortaa", Arial, sans-serif;
-  }
-
-  .filterButton:hover {
-	background-color: black; /* Green */
-	color: white;
-  }
-
 .conceptCovered{
 	padding-right: 100px;
 }
@@ -114,4 +59,8 @@ option{
 
 form{
 	max-width: 650px;
+}
+
+.buttonWithLog {
+	padding-left: 5px
 }

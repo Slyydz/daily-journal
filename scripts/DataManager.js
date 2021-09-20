@@ -1,21 +1,21 @@
-
+import { PostEdit } from "./PostEntry.js"
 //Filtering portion
 let postCollection = [];
 
 export const usePostCollection = () => {
-  //Best practice: we don't want to alter the original state, so
-  //make a copy of it and then return it
-  //The spread operator makes this quick work
-  return [...postCollection];
+    //Best practice: we don't want to alter the original state, so
+    //make a copy of it and then return it
+    //The spread operator makes this quick work
+    return [...postCollection];
 }
 //Initial Fetch 
 export const getPosts = () => {
     return fetch("http://localhost:8088/posts")
-    .then(response => response.json())
-    .then(parsedResponse => {
-        postCollection = parsedResponse;
-        return parsedResponse;
-    })
+        .then(response => response.json())
+        .then(parsedResponse => {
+            postCollection = parsedResponse;
+            return parsedResponse;
+        })
 }
 
 //Create Post Fetch
@@ -26,7 +26,43 @@ export const createPost = postObj => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(postObj)
-  
+
     })
         .then(response => response.json())
+}
+
+export const deletePost = (postId) => {
+    return fetch(`http://localhost:8088/posts/${postId}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+
+    })
+        .then(response => response.json())
+
+}
+
+//edit post functions
+export const getSinglePost = (postId) => {
+    return fetch(`http://localhost:8088/posts/${postId}`)
+        .then(response => response.json())
+}
+
+export const updatePost = postObj => {
+    return fetch(`http://localhost:8088/posts/${postObj.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(postObj)
+
+    })
+        .then(response => response.json())
+
+}
+
+export const showEdit = (postObj) => {
+    const entryElement = document.querySelector(".contentMain");
+    entryElement.innerHTML = PostEdit(postObj);
   }

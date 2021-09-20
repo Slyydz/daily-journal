@@ -1,0 +1,96 @@
+.buttons{
+	display:flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-right: 250px;
+	margin-left: 250px;
+}
+
+
+  .submitButton{
+	font-size: medium;
+	font-weight: bold;
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .submitButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  .updateButton{
+	font-size: medium;
+	font-weight: bold;
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .updateButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  .cancelButton{
+	font-size: medium;
+	font-weight: bold;
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .cancelButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  .clearButton{
+	font-size: medium;
+	font-weight: bold;
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .clearButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  .filterButton{
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .filterButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  .resetButton{
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .resetButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  .editButton{
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .editButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  .deleteButton{
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .deleteButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }

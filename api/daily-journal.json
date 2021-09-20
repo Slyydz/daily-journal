@@ -13,17 +13,17 @@
       "id": 1,
       "userId": 1,
       "concepts": "HTML & CSS",
-      "date": 1630698867586,
+      "date": 1632168095670,
       "journalEntry": "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
       "moodId": "Sad"
     },
     {
       "id": 2,
       "userId": 1,
-      "date": 1630698867586,
       "concepts": "Project Completion",
+      "date": 1632168100379,
       "journalEntry": "Today we finished our group html and css projects and presented them to the class.",
-      "moodId": "Ok"
+      "moodId": "Sad"
     },
     {
       "id": 3,
@@ -34,12 +34,12 @@
       "moodId": "Sad"
     },
     {
+      "id": 4,
       "userId": 1,
-      "concepts": "Testing Testing",
-      "date": 1631130196449,
-      "journalEntry": "This is just a drill. Do not Panic.",
-      "moodId": "Ok",
-      "id": 4
+      "concepts": "CRUD",
+      "date": 1632168375720,
+      "journalEntry": "Today is the day I got a better understanding of CRUD using giffy-gram and this exact journal that I am posting too!",
+      "moodId": "Sad"
     }
   ]
 }

@@ -1,7 +1,9 @@
 import { PostList } from "./PostList.js";
-import { getPosts } from "./DataManager.js"
+import { deletePost, getPosts, getSinglePost, showEdit } from "./DataManager.js"
 import { createPost } from "./DataManager.js"
 import { usePostCollection } from "./DataManager.js";
+import { newPost } from "./newPost.js";
+import { updatePost } from "./DataManager.js";
 
 
 //initial querySelector for page
@@ -41,7 +43,6 @@ applicationElement.addEventListener("click", event => {
 
     }
 })
-console.log(usePostCollection());
 
 const showFilteredPosts = (mood) => {
     const isMood = mood;
@@ -55,6 +56,74 @@ const showFilteredPosts = (mood) => {
     postElement.innerHTML = PostList(filteredData);
   }
 
+  //reset filter button
+applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id == "resetButton"){
+        showPostList();
+    }
+})
+
+//edit post button
+applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id.startsWith("editButton")){
+        const postId = event.target.id.split("--")[1];
+        getSinglePost(postId)
+        .then(response => {
+            showEdit(response);
+        })
+    }
+})
+
+//delete post button
+applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id.startsWith("deleteButton")){
+        const postId = event.target.id.split("--")[1];
+        deletePost(postId)
+        .then(response => {
+            showPostList();
+            showNewPost();
+        })
+    }
+})
+
+//update button 
+applicationElement.addEventListener("click", event => {
+    if (event.target.id.startsWith("updateButton")){
+            const postId = event.target.id.split("--")[1];
+            //collect all the details into an object
+            const concepts = document.querySelector("input[name='conceptCover']").value
+            const journalEntry = document.querySelector("textarea[name='journalEntry']").value
+            const mood = document.querySelector("select[name='selectMood']").value;
+            
+            const postObject = {
+                id: postId,
+                userId: 1,
+                concepts: concepts,
+                date: Date.now(),
+                journalEntry: journalEntry,
+                moodId: mood
+            }
+            
+            updatePost(postObject)
+              .then(response => {
+                showPostList();
+                showNewPost();
+              })
+          
+    }   
+})
+
+//cancel button
+applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id == "cancelButton"){
+        showNewPost();
+    }
+})
+
 //Showing Post list  
 const showPostList = () => {
         //Get a reference to the location on the DOM where the list will display
@@ -63,6 +132,11 @@ const showPostList = () => {
             postElement.innerHTML = PostList(allPosts);
         })
     }
+
+const showNewPost = () => {
+    const post = document.querySelector(".contentMain")
+    post.innerHTML = newPost();
+}
 
 //call
 showPostList();

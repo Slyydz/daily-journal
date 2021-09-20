@@ -1,9 +1,10 @@
 import { PostList } from "./PostList.js";
-import { deletePost, getPosts, getSinglePost, showEdit } from "./DataManager.js"
+import { deletePost, getPosts, getSinglePost, logoutUser, setLoggedInUser, showEdit, loginUser } from "./DataManager.js"
 import { createPost } from "./DataManager.js"
 import { usePostCollection } from "./DataManager.js";
 import { newPost } from "./newPost.js";
 import { updatePost } from "./DataManager.js";
+import { LoginForm, RegisterForm } from "./auth/authorization.js";
 
 
 //initial querySelector for page
@@ -124,6 +125,65 @@ applicationElement.addEventListener("click", event => {
     }
 })
 
+//logoutButton
+applicationElement.addEventListener("click", event => {
+    if (event.target.id == "logoutButton"){
+    event.preventDefault();
+    logoutUser();
+    sessionStorage.clear();
+    checkForUser();
+    const postElement = document.querySelector(".entryLog");
+    const dropdownElement = document.querySelector(".buttonWithLog");
+    dropdownElement.style.display = "none"
+    postElement.innerHTML = "";
+    }
+})
+
+//check for loggedIn
+const checkForUser = () => {
+    if (sessionStorage.getItem("user")){
+      //this is expecting an object. Need to fix
+        setLoggedInUser(JSON.parse(sessionStorage.getItem("user")));
+        console.log(sessionStorage.getItem("user"));
+        showAll();
+    }else {
+      //show login/register
+      showLoginRegister();
+      const dropdownElement = document.querySelector(".buttonWithLog");
+      dropdownElement.style.display = "none"
+    }
+  }
+
+  const showLoginRegister = () => {
+    const entryElement = document.querySelector(".contentMain");
+    //template strings can be used here too
+    entryElement.innerHTML = `${LoginForm()} <hr/> <hr/> ${RegisterForm()}`;
+}
+
+//login button
+applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id === "login__submit") {
+      //collect all the details into an object
+      const userObject = {
+        name: document.querySelector("input[name='name']").value,
+        email: document.querySelector("input[name='email']").value
+      }
+      console.log(userObject);
+      loginUser(userObject)
+      .then(dbUserObj => {
+        if(dbUserObj){
+          sessionStorage.setItem("user", JSON.stringify(dbUserObj));
+          showAll();
+        }else {
+          //got a false value - no user
+          const entryElement = document.querySelector(".entryForm");
+          entryElement.innerHTML = `<p class="center">That user does not exist. Please try again or register for your free account.</p> ${LoginForm()} <hr/> <hr/> ${RegisterForm()}`;
+        }
+      })
+    }
+  })
+
 //Showing Post list  
 const showPostList = () => {
         //Get a reference to the location on the DOM where the list will display
@@ -131,6 +191,8 @@ const showPostList = () => {
         getPosts().then((allPosts) => {
             postElement.innerHTML = PostList(allPosts);
         })
+        const dropdownElement = document.querySelector(".buttonWithLog");
+        dropdownElement.style.display = "block"
     }
 
 const showNewPost = () => {
@@ -138,5 +200,9 @@ const showNewPost = () => {
     post.innerHTML = newPost();
 }
 
-//call
-showPostList();
+const showAll = () => {
+    showPostList();
+    showNewPost();
+}
+
+checkForUser();

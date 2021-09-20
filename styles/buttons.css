@@ -94,3 +94,43 @@
 	background-color: black; /* Green */
 	color: white;
   }
+
+  .logoutButton{
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  .logoutButton:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  #login__submit{
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  #login__submit:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  #login__cancel{
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  #login__cancel:hover {
+	background-color: black; /* Green */
+	color: white;
+  }
+
+  #register__submit{
+	border-radius: 10px;
+	font-family: "Comfortaa", Arial, sans-serif;
+  }
+
+  #register__submit:hover {
+	background-color: black; /* Green */
+	color: white;
+  }

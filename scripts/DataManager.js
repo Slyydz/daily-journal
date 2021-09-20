@@ -1,4 +1,18 @@
 import { PostEdit } from "./PostEntry.js"
+
+let loggedInUser = {}
+
+export const getLoggedInUser = () => {
+    return loggedInUser;
+}
+
+export const logoutUser = () => {
+    loggedInUser = {};
+}
+
+export const setLoggedInUser = (input) => {
+    loggedInUser = input;
+}
 //Filtering portion
 let postCollection = [];
 
@@ -65,4 +79,21 @@ export const updatePost = postObj => {
 export const showEdit = (postObj) => {
     const entryElement = document.querySelector(".contentMain");
     entryElement.innerHTML = PostEdit(postObj);
+  }
+
+  //user
+  export const loginUser = (userObj) => {
+    return fetch(`http://localhost:8088/users?name=${userObj.name}&email=${userObj.email}`)
+    .then(response => response.json())
+    .then(parsedUser => {
+      //is there a user?
+      console.log("parsedUser", parsedUser) //data is returned as an array
+      if (parsedUser.length > 0){
+        setLoggedInUser(parsedUser[0]);
+        return getLoggedInUser();
+      }else {
+        //no user
+        return false;
+      }
+    })
   }

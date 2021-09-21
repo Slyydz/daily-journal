@@ -8,7 +8,7 @@ export const Post = (entry) => {
     <p>${entry.journalEntry}</p>
     <p>${formattedDate}</p>
     <p>Mood: ${entry.moodId} </p>
-    <h4>User Id: ${entry.userId}</h4>
+    <h4>User: ${entry.name}</h4>
     <button class="editButton" id="editButton--${entry.id}">Edit</button>
     <button class="deleteButton" id="deleteButton--${entry.id}">Delete</button>
     

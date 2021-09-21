@@ -24,7 +24,7 @@ export const usePostCollection = () => {
 }
 //Initial Fetch 
 export const getPosts = () => {
-    return fetch("http://localhost:8088/posts")
+    return fetch("http://localhost:8088/posts?_expand=user")
         .then(response => response.json())
         .then(parsedResponse => {
             postCollection = parsedResponse;
@@ -95,5 +95,20 @@ export const showEdit = (postObj) => {
         //no user
         return false;
       }
+    })
+  }
+
+  export const registerUser = (userObj) => {
+    return fetch(`http://localhost:8088/users`, {
+      method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userObj)
+    })
+    .then(response => response.json())
+    .then(parsedUser => {
+      setLoggedInUser(parsedUser);
+      return getLoggedInUser();
     })
   }

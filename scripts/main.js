@@ -1,5 +1,5 @@
 import { PostList } from "./PostList.js";
-import { deletePost, getPosts, getSinglePost, logoutUser, setLoggedInUser, showEdit, loginUser } from "./DataManager.js"
+import { deletePost, getPosts, getSinglePost, logoutUser, setLoggedInUser, showEdit, loginUser, registerUser, getLoggedInUser } from "./DataManager.js"
 import { createPost } from "./DataManager.js"
 import { usePostCollection } from "./DataManager.js";
 import { newPost } from "./newPost.js";
@@ -21,7 +21,8 @@ applicationElement.addEventListener("click", event => {
 		//we have not created a user yet - for now, we will hard code `1`.
 		//we can add the current time as well
 		const postObject = {
-            userId: 1,
+            userId: getLoggedInUser().id,
+            name: getLoggedInUser().name,
             concepts: concepts,
             date: Date.now(),
             journalEntry: description,
@@ -184,6 +185,22 @@ applicationElement.addEventListener("click", event => {
     }
   })
 
+  applicationElement.addEventListener("click", event => {
+    event.preventDefault();
+    if (event.target.id === "register__submit") {
+      //collect all the details into an object
+      const userObject = {
+        name: document.querySelector("input[name='registerName']").value,
+        email: document.querySelector("input[name='registerEmail']").value
+      }
+      registerUser(userObject)
+      .then(dbUserObj => {
+        sessionStorage.setItem("user", JSON.stringify(dbUserObj));
+        showAll();
+      })
+    }
+  })
+
 //Showing Post list  
 const showPostList = () => {
         //Get a reference to the location on the DOM where the list will display
@@ -206,3 +223,4 @@ const showAll = () => {
 }
 
 checkForUser();
+console.log(getLoggedInUser().name);

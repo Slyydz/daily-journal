@@ -74,6 +74,7 @@ applicationElement.addEventListener("click", event => {
         getSinglePost(postId)
         .then(response => {
             showEdit(response);
+            window.scrollTo(0,0);
         })
     }
 })
@@ -103,6 +104,7 @@ applicationElement.addEventListener("click", event => {
             const postObject = {
                 id: postId,
                 userId: 1,
+                name: getLoggedInUser().name,
                 concepts: concepts,
                 date: Date.now(),
                 journalEntry: journalEntry,
@@ -168,7 +170,8 @@ applicationElement.addEventListener("click", event => {
       //collect all the details into an object
       const userObject = {
         name: document.querySelector("input[name='name']").value,
-        email: document.querySelector("input[name='email']").value
+        email: document.querySelector("input[name='email']").value,
+        dateJoined: Date.now()
       }
       console.log(userObject);
       loginUser(userObject)
@@ -178,7 +181,7 @@ applicationElement.addEventListener("click", event => {
           showAll();
         }else {
           //got a false value - no user
-          const entryElement = document.querySelector(".entryForm");
+          const entryElement = document.querySelector(".contentMain");
           entryElement.innerHTML = `<p class="center">That user does not exist. Please try again or register for your free account.</p> ${LoginForm()} <hr/> <hr/> ${RegisterForm()}`;
         }
       })
@@ -191,7 +194,8 @@ applicationElement.addEventListener("click", event => {
       //collect all the details into an object
       const userObject = {
         name: document.querySelector("input[name='registerName']").value,
-        email: document.querySelector("input[name='registerEmail']").value
+        email: document.querySelector("input[name='registerEmail']").value,
+        dateJoined: Date.now()
       }
       registerUser(userObject)
       .then(dbUserObj => {
@@ -223,4 +227,3 @@ const showAll = () => {
 }
 
 checkForUser();
-console.log(getLoggedInUser().name);

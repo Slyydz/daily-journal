@@ -9,18 +9,24 @@
     {
       "name": "Slyydz",
       "email": "colewilliamsgolf@gmail.com",
-      "id": 2
+      "id": 2,
+      "dateJoined": 1632234055722
+    },
+    {
+      "name": "Dummy",
+      "email": "Data",
+      "id": 3
     }
   ],
   "posts": [
     {
       "id": 2,
       "userId": 1,
-      "name": "Brady Williams",
+      "name": "Slyydz",
       "concepts": "Project Completion",
-      "date": 1632168100379,
+      "date": 1632233916034,
       "journalEntry": "Today we finished our group html and css projects and presented them to the class.",
-      "moodId": "Sad"
+      "moodId": "Ok"
     },
     {
       "id": 3,
@@ -34,11 +40,11 @@
     {
       "id": 4,
       "userId": 1,
-      "name": "Brady Williams",
+      "name": "Slyydz",
       "concepts": "CRUD",
-      "date": 1632168375720,
+      "date": 1632233921564,
       "journalEntry": "Today is the day I got a better understanding of CRUD using giffy-gram and this exact journal that I am posting too!",
-      "moodId": "Sad"
+      "moodId": "Ok"
     },
     {
       "userId": 2,
